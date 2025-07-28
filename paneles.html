@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Paneles - TZIHNO</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Orbitron', sans-serif;
+      background: #0d0d0d;
+      color: white;
+    }
+    .panel-container {
+      max-width: 400px;
+      margin: 2rem auto;
+      background: #111;
+      border-radius: 20px;
+      box-shadow: 0 0 15px rgba(0, 255, 150, 0.2);
+      padding: 1.5rem;
+      position: relative;
+    }
+    .tag {
+      color: #00ff7f;
+      font-size: 0.8rem;
+      margin-bottom: 0.5rem;
+    }
+    .title {
+      font-size: 1.2rem;
+      margin: 0.5rem 0;
+    }
+    .desc {
+      font-size: 0.9rem;
+      color: #aaa;
+      margin-bottom: 1rem;
+    }
+    video {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+    }
+    .info-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+    .info-row span {
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 0.8rem;
+      margin-top: 0.5rem;
+      font-size: 0.95rem;
+      font-weight: bold;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .btn.buy {
+      background: #007733;
+      color: white;
+      box-shadow: 0 0 10px #00ff88;
+    }
+    .btn.buy:hover {
+      background: #005c26;
+    }
+    .btn.info {
+      background: linear-gradient(to right, #3f00ff, #8a2be2);
+      color: white;
+      box-shadow: 0 0 10px #9d00ff;
+    }
+    .btn.info:hover {
+      filter: brightness(0.9);
+    }
+    .info-bubble {
+      display: none;
+      background: #3f00ff;
+      border-radius: 15px;
+      color: white;
+      padding: 1rem;
+      position: absolute;
+      top: -10px;
+      left: 105%;
+      width: 200px;
+      font-size: 0.85rem;
+      box-shadow: 0 0 10px #9d00ff;
+      z-index: 10;
+    }
+    .panel-container:hover .info-bubble.active {
+      display: block;
+    }
+    .price-options {
+      margin-top: 0.5rem;
+      display: none;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+    .price-options a button {
+      padding: 0.5rem;
+      border: none;
+      border-radius: 15px;
+      background: #222;
+      color: white;
+      cursor: pointer;
+      transition: 0.2s;
+      width: 100%;
+    }
+    .price-options a button:hover {
+      background: #444;
+    }
+
+    /* Burbuja comprobante */
+    #comprobanteBubble {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: #222;
+      color: white;
+      padding: 1.2rem;
+      border-radius: 15px;
+      box-shadow: 0 0 15px #00ffcc;
+      max-width: 280px;
+      font-family: 'Orbitron', sans-serif;
+      z-index: 9999;
+      display: none;
+      flex-direction: column;
+      gap: 10px;
+    }
+    #comprobanteBubble a,
+    #comprobanteBubble button {
+      font-weight: bold;
+      border-radius: 10px;
+      padding: 8px 16px;
+    }
+    #comprobanteBubble a {
+      background: #00cc66;
+      color: white;
+      text-decoration: none;
+      box-shadow: 0 0 5px #00ff88;
+    }
+    #comprobanteBubble button {
+      background: #ff4444;
+      color: white;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 0 5px #ff5555;
+    }
+  </style>
+</head>
+<body>
+
+<!-- PANEL 1 -->
+<div class="panel-container">
+  <div class="tag">🔰 HACKS ANDROID FREE FIRE</div>
+  <div class="title">TZIHNO X7 - No Root - 20 Días</div>
+  <div class="desc">Aimbot Esp Lines</div>
+  <video autoplay loop muted src="cuban.mp4"></video>
+  <div class="info-row">
+    <span>⏱️ 30 días</span>
+    <span>🎁 9 disponibles</span>
+  </div>
+  <button class="btn buy" onclick="togglePrices(this)">🛒 COMPRAR AHORA</button>
+  <div class="price-options">
+    <a href="https://www.paypal.com/donate/?hosted_button_id=2GKW2N4E4L2ZG" target="_blank"><button>10 DÍAS = 10 USD</button></a>
+    <a href="https://www.paypal.com/donate/?hosted_button_id=2GKW2N4E4L2ZG" target="_blank"><button>20 DÍAS = 15 USD</button></a>
+    <a href="https://www.paypal.com/donate/?hosted_button_id=2GKW2N4E4L2ZG" target="_blank"><button>30 DÍAS = 20 USD</button></a>
+  </div>
+  <button class="btn info" onclick="toggleInfo(this)">ℹ️ INFO</button>
+  <div class="info-bubble">Versión mejorada sin root. Compatible Android 10+. Incluye antiban y configuración rápida.</div>
+</div>
+
+<!-- PANEL 2 -->
+<div class="panel-container">
+  <div class="tag">🔰 DRIPCLIENT PARA FREE FIRE</div>
+  <div class="title">TZIHNO X7 - Estable - 30 Días</div>
+  <div class="desc">Auto Headshot + AntiBan</div>
+  <video autoplay loop muted src="drip.mp4"></video>
+  <div class="info-row">
+    <span>⏱️ 30 días</span>
+    <span>🎁 6 disponibles</span>
+  </div>
+  <button class="btn buy" onclick="togglePrices(this)">🛒 COMPRAR AHORA</button>
+  <div class="price-options">
+    <a href="https://www.paypal.com/donate/?hosted_button_id=2GKW2N4E4L2ZG" target="_blank"><button>1 DÍA = 3 USD</button></a>
+    <a href="https://www.paypal.com/donate/?hosted_button_id=2GKW2N4E4L2ZG" target="_blank"><button>7 DÍAS = 10 USD</button></a>
+    <a href="https://www.paypal.com/donate/?hosted_button_id=2GKW2N4E4L2ZG" target="_blank"><button>15 DÍAS = 12 USD</button></a>
+    <a href="https://www.paypal.com/donate/?hosted_button_id=2GKW2N4E4L2ZG" target="_blank"><button>30 DÍAS = 20 USD</button></a>
+  </div>
+  <button class="btn info" onclick="toggleInfo(this)">ℹ️ INFO</button>
+  <div class="info-bubble">Cliente premium con soporte antiban y bypass. Ideal para clasificatorias.</div>
+</div>
+
+<!-- BURBUJA COMPROBANTE -->
+<div id="comprobanteBubble">
+  <div>📩 <strong>SI YA LO COMPRASTE</strong><br>NECESITAS ENVIAR UN COMPROBANTE</div>
+  <div style="display: flex; justify-content: space-between;">
+    <a href="https://wa.me/+50236264667/?text=HOLA+YA+HICE+LA+COMPRA+YA+TE+PASO+EL+COMPROBANTE" target="_blank">ENVIAR</a>
+    <button onclick="cerrarBurbuja()">CANCELAR</button>
+  </div>
+</div>
+
+<!-- SCRIPT -->
+<script>
+  function toggleInfo(button) {
+    const bubble = button.nextElementSibling;
+    bubble.classList.toggle('active');
+  }
+
+  function togglePrices(button) {
+    const options = button.nextElementSibling;
+    options.style.display = options.style.display === 'flex' ? 'none' : 'flex';
+  }
+
+  function cerrarBurbuja() {
+    document.getElementById('comprobanteBubble').style.display = 'none';
+    localStorage.removeItem('fueAPagar');
+  }
+
+  window.addEventListener('load', () => {
+    if (localStorage.getItem('fueAPagar') === 'true') {
+      document.getElementById('comprobanteBubble').style.display = 'flex';
+    }
+  });
+</script>
+
+</body>
+</html>
